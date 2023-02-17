@@ -6,10 +6,7 @@
  * 版权所有，侵权必究！
  */
 
-package com.atcjw.utils;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.apache.http.HttpStatus;
+package com.atcjw.result;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -37,6 +34,13 @@ public class RetJson {
 		 retJson.setMessage(message);
 		 return retJson;
 	 }
+
+	public static RetJson fail(int code, String message) {
+		RetJson retJson = new RetJson();
+		retJson.setCode(code);
+		retJson.setMessage(message);
+		return retJson;
+	}
 
 	 public RetJson put(String key, Object value) {
 		 if (this.data == null) {

@@ -1,9 +1,9 @@
 package com.atcjw.vod.controller;
 
+import com.atcjw.exception.GrainClassesException;
 import com.atcjw.model.vod.Teacher;
-import com.atcjw.utils.RetJson;
+import com.atcjw.result.RetJson;
 import com.atcjw.vo.vod.TeacherQueryVo;
-import com.atcjw.vod.dao.TeacherDao;
 import com.atcjw.vod.service.TeacherService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
