@@ -23,7 +23,14 @@ public class RetJson {
 
 	 public static RetJson ok() {
 		 RetJson retJson = new RetJson();
-		 retJson.setCode(200);
+		 retJson.setCode(20000);
+		 retJson.setMessage("success");
+		 return retJson;
+	 }
+
+	 public static RetJson ok(int code) {
+		 RetJson retJson = new RetJson();
+		 retJson.setCode(code);
 		 retJson.setMessage("success");
 		 return retJson;
 	 }

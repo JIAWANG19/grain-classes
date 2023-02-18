@@ -1,31 +1,31 @@
-package com.atcjw.vod.controller;
+package com.atcjw.vod.abandon.controller;
 
 import com.atcjw.model.vod.Teacher;
 import com.atcjw.result.RetJson;
-import com.atcjw.vod.service.TeacherService;
+import com.atcjw.vod.abandon.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping("admin/vod/teacher")
-@RestController
-// TODO
-@CrossOrigin // 跨域
+//@RequestMapping("admin/vod/teacher")
+//@RestController
+//// TODO
+//@CrossOrigin // 跨域
 public class TeacherController {
     @Autowired
     TeacherService teacherService;
 
     @GetMapping("/list")
     public RetJson queryAllTeacher() {
-        List<Teacher> list = teacherService.list();
+        List<Teacher> list = teacherService.queryAllTeacher();
         return RetJson.ok().put("list", list);
     }
 
     @DeleteMapping("/{id}")
     public RetJson deleteTeacher(@PathVariable("id") long id) {
-        boolean message = teacherService.removeById(id);
-        if (message) return RetJson.ok();
+        int message = teacherService.deleteTeacher(id);
+        if (message == 1) return RetJson.ok();
         else return RetJson.fail("删除失败");
     }
 
@@ -39,29 +39,29 @@ public class TeacherController {
 
     @PostMapping("/")
     public RetJson insertTeacher(@RequestBody Teacher teacher) {
-        boolean message = teacherService.save(teacher);
-        if (message) return RetJson.ok();
+        int message = teacherService.insertTeacher(teacher);
+        if (message == 1) return RetJson.ok();
         else return RetJson.fail("添加失败");
     }
 
     @GetMapping("/{id}")
     public RetJson getTeacherById(@PathVariable("id") long id) {
-        Teacher teacher = teacherService.getById(id);
+        Teacher teacher = teacherService.getTeacherById(id);
         return RetJson.ok().put("teacher", teacher);
     }
 
     @PutMapping("/{id}")
     public RetJson updateTeacher(@PathVariable("id") long id,
                                  @RequestBody Teacher teacher) {
-        boolean isSuccess = teacherService.updateById(teacher);
-        if (isSuccess) return RetJson.ok();
+        int isSuccess = teacherService.updateTeacher(id, teacher);
+        if (isSuccess == 1) return RetJson.ok();
         else return RetJson.fail("修改失败");
     }
 
     @DeleteMapping("/")
     public RetJson deleteTeacherList(@RequestBody List<Long> ids) {
-        boolean message = teacherService.removeByIds(ids);
-        if (message) return RetJson.ok();
+        int message = teacherService.deleteTeacherList(ids);
+        if (message == ids.size()) return RetJson.ok();
         else return RetJson.fail("批量删除失败");
     }
 }

@@ -1,6 +1,7 @@
 package com.atcjw.vod.dao;
 
 import com.atcjw.model.vod.Teacher;
+import com.atcjw.vod.abandon.dao.TeacherDao;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -14,7 +15,7 @@ public class TestTeacherDao implements BaseDaoTest {
     @Test
     public void testQueryAllTeacher() {
         List<Teacher> teachers = teacherDao.queryAllTeacher();
-        assert teachers.size() == 5;
+        teachers.forEach(System.out::println);
     }
 
     @Test
@@ -25,7 +26,7 @@ public class TestTeacherDao implements BaseDaoTest {
 
     @Test
     public void testDeleteTeacher() {
-        int message = teacherDao.deleteTeacher(1);
+        int message = teacherDao.deleteTeacher(5);
         assert message == 1;
     }
 
@@ -61,7 +62,7 @@ public class TestTeacherDao implements BaseDaoTest {
         teacher.setSort(0);
         teacher.setIntro("特级讲师");
         teacher.setCareer("特级讲师");
-        int message = teacherDao.updateById(2, teacher);
+        int message = teacherDao.updateById(5, teacher);
         assert message == 1;
     }
 

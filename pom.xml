@@ -21,7 +21,7 @@
         <cloud.version>2022.0.1</cloud.version>
         <cloud.alibaba.version>2022.0.0.0-RC1</cloud.alibaba.version>
         <mybatis.version>3.0.0</mybatis.version>
-        <mybatisplus.version>3.4.3</mybatisplus.version>
+        <mybatisplus.version>3.5.3.1</mybatisplus.version>
         <mysql.version>8.0.25</mysql.version>
         <lombok.version>1.18.24</lombok.version>
         <knife4j.version>3.0.3</knife4j.version>
