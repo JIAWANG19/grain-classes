@@ -7,7 +7,6 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan("com.atcjw")
-@MapperScan("com.atcjw.vod.dao")
 public class ServiceVodApplication {
     public static void main(String[] args) {
         SpringApplication.run(ServiceVodApplication.class, args);
