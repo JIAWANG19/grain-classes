@@ -1,6 +1,7 @@
 package com.atcjw.vod.dao;
 
 import com.atcjw.model.vod.Course;
+import com.atcjw.vo.vod.CoursePublishVo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -30,5 +31,12 @@ public class CourseMapperTest implements MapperBaseTest {
         if (course.getId() != null) {
             System.out.println(course.getId());
         }
+    }
+
+
+    @Test
+    public void testSelectPublishVoById() {
+        CoursePublishVo coursePublishVo = courseMapper.selectPublishVoById(1L);
+        System.out.println(coursePublishVo);
     }
 }

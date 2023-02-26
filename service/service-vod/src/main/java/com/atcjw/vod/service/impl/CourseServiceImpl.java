@@ -5,6 +5,7 @@ import com.atcjw.model.vod.CourseDescription;
 import com.atcjw.model.vod.Subject;
 import com.atcjw.model.vod.Teacher;
 import com.atcjw.vo.vod.CourseFormVo;
+import com.atcjw.vo.vod.CoursePublishVo;
 import com.atcjw.vo.vod.CourseQueryVo;
 import com.atcjw.vod.dao.CourseMapper;
 import com.atcjw.vod.service.CourseDescriptionService;
@@ -18,6 +19,8 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
+
+import java.util.Date;
 
 
 @Service
@@ -96,8 +99,23 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
         BeanUtils.copyProperties(courseFormVo,course);
         courseMapper.updateById(course);
         CourseDescription description = new CourseDescription();
+        description.setId(course.getId());
         description.setDescription(courseFormVo.getDescription());
         courseDescriptionService.updateById(description);
+        return true;
+    }
+
+    @Override
+    public CoursePublishVo getCoursePublishVo(Long id) {
+        return courseMapper.selectPublishVoById(id);
+    }
+
+    @Override
+    public boolean publishCourse(Long id) {
+        Course course = courseMapper.selectById(id);
+        course.setStatus(1);
+        course.setPublishTime(new Date());
+        baseMapper.updateById(course);
         return true;
     }
 

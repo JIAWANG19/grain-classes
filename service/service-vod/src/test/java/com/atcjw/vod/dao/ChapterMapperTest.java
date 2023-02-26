@@ -1,6 +1,7 @@
 package com.atcjw.vod.dao;
 
 import com.atcjw.model.vod.Chapter;
+import com.atcjw.vo.vod.CoursePublishVo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 

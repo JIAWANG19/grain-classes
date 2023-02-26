@@ -3,6 +3,7 @@ package com.atcjw.vod.controller;
 import com.atcjw.model.vod.Course;
 import com.atcjw.result.RetJson;
 import com.atcjw.vo.vod.CourseFormVo;
+import com.atcjw.vo.vod.CoursePublishVo;
 import com.atcjw.vo.vod.CourseQueryVo;
 import com.atcjw.vod.service.CourseService;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("admin/vod/course")
-// TODO
+// todo
 @CrossOrigin // 跨域
 public class CourseController {
     @Autowired
@@ -41,7 +42,27 @@ public class CourseController {
 
     @PutMapping("")
     public RetJson update(@RequestBody CourseFormVo course) {
-        boolean success = courseService.updateCourseInfo(course);
+        courseService.updateCourseInfo(course);
+        return RetJson.ok().put("id", course.getId());
+    }
+
+    /**
+     * 根据 id 查询课程的发布信息
+     * @param id 课程id
+     * @return 课程的发布信息
+     */
+    @GetMapping("/publish/{id}")
+    public RetJson getCoursePublishVo(@PathVariable("id") Long id) {
+        CoursePublishVo coursePublishVo = courseService.getCoursePublishVo(id);
+        return RetJson.ok().put("coursePublishVo", coursePublishVo);
+    }
+
+    /**
+     * 发布课程
+     */
+    @PutMapping("/publish/{id}")
+    public RetJson publishCourse(@PathVariable("id") Long id) {
+        boolean success = courseService.publishCourse(id);
         return RetJson.ok();
     }
 }
