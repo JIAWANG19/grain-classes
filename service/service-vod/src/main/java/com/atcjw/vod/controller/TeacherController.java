@@ -33,7 +33,7 @@ public class TeacherController {
         else return RetJson.fail("删除失败");
     }
 
-    @PostMapping("findQueryPage/{pageNo}/{pageSize}")
+    @PostMapping("/page/{pageNo}/{pageSize}")
     public RetJson findPage(@PathVariable("pageNo") int pageNo,
                             @PathVariable("pageSize") int pageSize,
                             @RequestBody(required = false) TeacherQueryVo teacherQueryVo) {

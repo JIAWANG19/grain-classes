@@ -1,4 +1,5 @@
-package com.atcjw.vod.service;
+package com.atcjw.vod.dao;
+
 
 import com.atcjw.model.vod.Subject;
 import org.junit.jupiter.api.Test;
@@ -6,13 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
-public class TestSubjectService implements TestServiceBase{
+public class SubjectMapperTest implements MapperBaseTest {
     @Autowired
-    SubjectService subjectService;
+    SubjectMapper subjectMapper;
 
     @Test
-    public void TestGetByParentId() {
-        List<Subject> subjects = subjectService.getByParentId(0);
+    public void testSelectList() {
+        List<Subject> subjects = subjectMapper.selectList(null);
         subjects.forEach(System.out::println);
     }
 }

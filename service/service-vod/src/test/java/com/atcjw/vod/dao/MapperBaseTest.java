@@ -7,5 +7,5 @@ import org.springframework.transaction.annotation.Transactional;
 @SpringBootTest
 @Transactional
 @Rollback
-public interface TestBaseMapper {
+public interface MapperBaseTest {
 }

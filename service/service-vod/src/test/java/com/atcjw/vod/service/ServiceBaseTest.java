@@ -5,5 +5,5 @@ import org.springframework.test.annotation.Rollback;
 
 @SpringBootTest
 @Rollback
-public interface TestServiceBase {
+public interface ServiceBaseTest {
 }
