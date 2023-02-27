@@ -1,5 +1,6 @@
 package com.atcjw.vod.service.impl;
 
+import com.alibaba.nacos.api.config.annotation.NacosValue;
 import com.aliyun.oss.OSS;
 import com.aliyun.oss.OSSClientBuilder;
 import com.aliyun.oss.model.CannedAccessControlList;
@@ -21,9 +22,22 @@ import java.util.UUID;
 
 @Slf4j
 @Service
-@PropertySource("classpath:aliyunOOS.properties")
+//@PropertySource("classpath:aliyunOOS.properties")
 @CrossOrigin
 public class FileServiceImpl implements FileService {
+
+//    @NacosValue("${alibaba.oos.file.endpoint}")
+//    private String endpoint;
+//
+//    @NacosValue("${alibaba.oss.file.keyId}")
+//    private String keyId;
+//
+//    @NacosValue("${alibaba.oos.file.keySecret}")
+//    private String keySecret;
+//
+//    @NacosValue("${alibaba.oos.file.bucketName}")
+//    private String bucketName;
+
 
     @Value("${alibaba.oos.file.endpoint}")
     private String endpoint;

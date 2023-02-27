@@ -2,16 +2,22 @@ server:
   port: 8301
 
 spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.59.1:8848
+        namespace: 7f30555e-c5ba-4988-9442-c3f836c8f72e
+        group: dev
+      discovery:
+        namespace: 7f30555e-c5ba-4988-9442-c3f836c8f72e
+  config:
+    import:
+      - optional:nacos:datebase.yml?group=dev&refreshEnabled=true
+      - optional:nacos:aliyunOOS.properties?group=dev&refreshEnabled=true
   application:
     name: service-vod
   profiles:
     active: dev
-    include: classpath:aliyunOOS.properties
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/glkt_vod
-    username: root
-    password: 1234
   servlet:
     multipart:
       max-file-size: 10MB
