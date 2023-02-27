@@ -65,4 +65,14 @@ public class CourseController {
         boolean success = courseService.publishCourse(id);
         return RetJson.ok();
     }
+
+    /**
+     * 删除课程
+     * @param id 课程id
+     */
+    @DeleteMapping("/{id}")
+    public RetJson delete(@PathVariable("id") Long id) {
+        courseService.removeCourseById(id);
+        return RetJson.ok();
+    }
 }

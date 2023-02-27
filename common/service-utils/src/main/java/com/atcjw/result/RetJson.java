@@ -77,7 +77,8 @@ public class RetJson {
 		return data;
 	}
 
-	public void setData(Map<String, Object> data) {
+	public RetJson setData(Map<String, Object> data) {
 		this.data = data;
+		return this;
 	}
 }

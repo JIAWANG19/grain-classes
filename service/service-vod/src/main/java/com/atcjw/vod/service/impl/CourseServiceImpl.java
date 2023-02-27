@@ -8,10 +8,7 @@ import com.atcjw.vo.vod.CourseFormVo;
 import com.atcjw.vo.vod.CoursePublishVo;
 import com.atcjw.vo.vod.CourseQueryVo;
 import com.atcjw.vod.dao.CourseMapper;
-import com.atcjw.vod.service.CourseDescriptionService;
-import com.atcjw.vod.service.CourseService;
-import com.atcjw.vod.service.SubjectService;
-import com.atcjw.vod.service.TeacherService;
+import com.atcjw.vod.service.*;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -36,6 +33,12 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
 
     @Autowired
     CourseDescriptionService courseDescriptionService;
+
+    @Autowired
+    VideoService videoService;
+
+    @Autowired
+    ChapterService chapterService;
 
     @Override
     public Page<Course> pageQuery(Page<Course> pageParam, CourseQueryVo courseQueryVo) {
@@ -117,6 +120,18 @@ public class CourseServiceImpl extends ServiceImpl<CourseMapper, Course> impleme
         course.setPublishTime(new Date());
         baseMapper.updateById(course);
         return true;
+    }
+
+    @Override
+    public void removeCourseById(Long id) {
+        // 删除小节
+        videoService.removeByCourseId(id);
+        // 删除章节
+        chapterService.removeByCourseId(id);
+        // 删除课程描述
+        courseDescriptionService.removeByCourseId(id);
+        // 删除课程
+        courseMapper.deleteById(id);
     }
 
     private void addInfo(Course course) {
