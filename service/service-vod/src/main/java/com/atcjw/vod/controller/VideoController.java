@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("admin/vod/video")
 // TODO
-@CrossOrigin // 跨域
+//@CrossOrigin // 跨域
 public class VideoController {
     @Autowired
     VideoService videoService;

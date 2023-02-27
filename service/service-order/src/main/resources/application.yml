@@ -1,34 +1,32 @@
+# 服务端口
 server:
-  port: 8301
+  port: 8302
 
+# 服务名
 spring:
   application:
-    name: service-vod
+    name: service-order
   profiles:
     active: dev
+    # 返回json的全局时间格式
   cloud:
     nacos:
-      config:
-        server-addr: 192.168.59.1:8848
-        namespace: 7f30555e-c5ba-4988-9442-c3f836c8f72e
-        group: dev
       discovery:
         server-addr: 192.168.59.1:8848
-        namespace: 7f30555e-c5ba-4988-9442-c3f836c8f72e
+        namespace: 5899d0a4-6587-4b89-b2ad-139b029ee54c
+        group: dev
+      config:
+        server-addr: 192.168.59.1:8848
+        namespace: 5899d0a4-6587-4b89-b2ad-139b029ee54c
         group: dev
   config:
     import:
       - optional:nacos:datebase.yml?group=dev&refreshEnabled=true
-      - optional:nacos:aliyunOOS.properties?group=dev&refreshEnabled=true
-  servlet:
-    multipart:
-      max-file-size: 10MB
-      max-request-size: 20MB
-
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
 
+  # mybatis日志
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

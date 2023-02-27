@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("admin/vod/chapter")
 // TODO
-@CrossOrigin // 跨域
+//@CrossOrigin // 跨域
 public class ChapterController {
     @Autowired
     ChapterService chapterService;

@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>service-vod</module>
+        <module>service-order</module>
     </modules>
 
     <properties>
@@ -39,6 +40,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
 
         <!--mybatis-plus-->

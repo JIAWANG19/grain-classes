@@ -11,7 +11,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("admin/vod/videoVisitor")
 // todo
-@CrossOrigin // 跨域
+//@CrossOrigin // 跨域
 public class VideoVisitorController {
     @Autowired
     VideoVisitorService videoVisitorService;
