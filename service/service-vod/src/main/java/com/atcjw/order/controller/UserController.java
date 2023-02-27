@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("admin/vod/user")
-//@CrossOrigin // 跨域
 public class UserController {
     @PostMapping("/login")
     public RetJson login() {

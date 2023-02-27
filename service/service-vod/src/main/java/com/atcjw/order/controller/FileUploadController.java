@@ -8,8 +8,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/admin/vod/file")
-// TODO
-//@CrossOrigin // 跨域
 public class FileUploadController {
     @Autowired
     FileService fileService;

@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("admin/vod/course")
-// todo
-//@CrossOrigin // 跨域
 public class CourseController {
     @Autowired
     CourseService courseService;

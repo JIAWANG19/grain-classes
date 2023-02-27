@@ -14,8 +14,6 @@ import java.util.List;
 
 @RequestMapping("admin/vod/teacher")
 @RestController
-// TODO
-//@CrossOrigin // 跨域
 public class TeacherController {
     @Autowired
     TeacherService teacherService;

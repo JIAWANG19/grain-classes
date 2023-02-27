@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("admin/vod")
-// todo
-//@CrossOrigin // 跨域
 public class VodController {
     @Autowired
     VodService vodService;

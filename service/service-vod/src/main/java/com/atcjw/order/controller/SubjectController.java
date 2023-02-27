@@ -10,8 +10,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("admin/vod/subject")
-// TODO
-//@CrossOrigin // 跨域
 public class SubjectController {
     @Autowired
     SubjectService subjectService;
