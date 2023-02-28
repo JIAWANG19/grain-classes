@@ -17,7 +17,13 @@ spring:
         locator:
           enabled: true
       routes:
+        # service-vod 模块
         - id: service-vod
           uri: http://localhost:8301/
           predicates:
           - Path=/admin/vod/**
+        # service-order 模块
+        - id: service-order
+          uri: http://localhost:8302/
+          predicates:
+          - Path=/admin/order/**
