@@ -27,3 +27,8 @@ spring:
           uri: http://localhost:8302/
           predicates:
           - Path=/admin/order/**
+        # service-order 模块
+        - id: service-activity
+          uri: http://localhost:8303/
+          predicates:
+          - Path=/admin/activity/**

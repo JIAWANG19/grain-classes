@@ -1,4 +1,7 @@
 package com.atcjw.activity.service;
 
-public interface CouponUseService {
+import com.atcjw.model.activity.CouponUse;
+import com.baomidou.mybatisplus.extension.service.IService;
+
+public interface CouponUseService extends IService<CouponUse> {
 }
