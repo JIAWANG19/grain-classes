@@ -10,16 +10,16 @@ spring:
     nacos:
       config:
         server-addr: 192.168.59.1:8848
-        namespace: 7f30555e-c5ba-4988-9442-c3f836c8f72e
-        group: dev
+        namespace: 5b1a127f-9baa-4a5f-a709-e0b67cb7ef3d
+        group: service-vod
       discovery:
         server-addr: 192.168.59.1:8848
-        namespace: 7f30555e-c5ba-4988-9442-c3f836c8f72e
-        group: dev
+        namespace: 5b1a127f-9baa-4a5f-a709-e0b67cb7ef3d
+        group: service-vod
   config:
     import:
-      - optional:nacos:datebase.yml?group=dev&refreshEnabled=true
-      - optional:nacos:aliyunOOS.properties?group=dev&refreshEnabled=true
+      - optional:nacos:vod-database.yml?group=service-vod&refreshEnabled=true
+      - optional:nacos:vod-aliyunOOS.properties?group=service-vod&refreshEnabled=true
   servlet:
     multipart:
       max-file-size: 10MB

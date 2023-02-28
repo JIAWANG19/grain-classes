@@ -1,32 +1,29 @@
-# 服务端口
 server:
-  port: 8303
+  port: 8304
 
-# 服务名
 spring:
   application:
-    name: service-activity
+    name: service-user
   profiles:
     active: dev
-    # 返回json的全局时间格式
   cloud:
     nacos:
-      discovery:
+      config:
         server-addr: 192.168.59.1:8848
         namespace: 5b1a127f-9baa-4a5f-a709-e0b67cb7ef3d
         group: dev
-      config:
+      discovery:
         server-addr: 192.168.59.1:8848
         namespace: 5b1a127f-9baa-4a5f-a709-e0b67cb7ef3d
         group: dev
   config:
     import:
-      - optional:nacos:activity-database.yml?group=service-activity&refreshEnabled=true
+      - optional:nacos:user-database.yml?group=service-user&refreshEnabled=true
+
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
 
-  # mybatis日志
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

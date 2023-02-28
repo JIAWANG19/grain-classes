@@ -20,6 +20,6 @@ public class CouponInfoServiceImpl extends ServiceImpl<CouponInfoMapper, CouponI
 
     @Override
     public Page<CouponInfo> pageQueryUsed(int pageNo, int pageSize, CouponUseQueryVo couponUseQueryVo) {
-
+        return null;
     }
 }
