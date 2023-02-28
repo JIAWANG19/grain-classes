@@ -2,6 +2,7 @@ package com.atcjw.activity.controller;
 
 import com.atcjw.activity.service.CouponInfoService;
 import com.atcjw.model.activity.CouponInfo;
+import com.atcjw.model.activity.CouponUse;
 import com.atcjw.result.RetJson;
 import com.atcjw.vo.activity.CouponUseQueryVo;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -20,17 +21,6 @@ public class CouponInfoController {
     public RetJson page(@PathVariable("pageNo") int pageNo,
                         @PathVariable("pageSize") int pageSize) {
         Page<CouponInfo> pageInfo = couponInfoService.page(new Page<>(pageNo, pageSize));
-        return RetJson.ok().put("pageInfo", pageInfo);
-    }
-
-    /**
-     * 分页查询已经使用的优惠卷
-     */
-    @PostMapping("/{pageNo}/{pageSize}")
-    public RetJson pageQueryUsed(@PathVariable("pageNo") int pageNo,
-                            @PathVariable("pageSize") int pageSize,
-                            @RequestBody CouponUseQueryVo couponUseQueryVo) {
-        Page<CouponInfo> pageInfo = couponInfoService.pageQueryUsed(pageNo, pageSize, couponUseQueryVo);
         return RetJson.ok().put("pageInfo", pageInfo);
     }
 
