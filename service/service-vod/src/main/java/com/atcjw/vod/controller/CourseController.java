@@ -17,10 +17,10 @@ public class CourseController {
     @Autowired
     CourseService courseService;
 
-    @PostMapping("/page/{pageNo}/{pageSize}")
+    @GetMapping("/{pageNo}/{pageSize}")
     public RetJson findPage(@PathVariable("pageNo") int pageNo,
                             @PathVariable("pageSize") int pageSize,
-                            @RequestBody(required = false) CourseQueryVo courseQueryVo) {
+                            CourseQueryVo courseQueryVo) {
         Page<Course> pageParam = new Page<>(pageNo, pageSize);
         Page<Course> page = courseService.pageQuery(pageParam, courseQueryVo);
         return RetJson.ok().put("page", page);

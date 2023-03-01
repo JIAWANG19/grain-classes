@@ -14,10 +14,10 @@ public class OrderInfoController {
     @Autowired
     OrderInfoService orderInfoService;
 
-    @PostMapping("/{pageNo}/{pageSize}")
+    @GetMapping("/{pageNo}/{pageSize}")
     public RetJson page(@PathVariable("pageNo") int pageNo,
                         @PathVariable("pageSize") int pageSize,
-                        @RequestBody(required = false) OrderInfoQueryVo infoQueryVo) {
+                        OrderInfoQueryVo infoQueryVo) {
         Page<OrderInfo> pageInfo = orderInfoService.pageInfo(pageNo, pageSize, infoQueryVo);
         return RetJson.ok().put("pageInfo", pageInfo);
     }

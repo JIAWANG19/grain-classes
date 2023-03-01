@@ -31,10 +31,10 @@ public class TeacherController {
         else return RetJson.fail("删除失败");
     }
 
-    @PostMapping("/page/{pageNo}/{pageSize}")
+    @GetMapping("/{pageNo}/{pageSize}")
     public RetJson findPage(@PathVariable("pageNo") int pageNo,
                             @PathVariable("pageSize") int pageSize,
-                            @RequestBody(required = false) TeacherQueryVo teacherQueryVo) {
+                            TeacherQueryVo teacherQueryVo) {
         QueryWrapper<Teacher> wrapper = null;
         if (teacherQueryVo != null) {
             wrapper = new QueryWrapper<>();
