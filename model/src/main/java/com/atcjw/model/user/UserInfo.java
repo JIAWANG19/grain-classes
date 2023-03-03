@@ -14,13 +14,15 @@ public class UserInfo extends BaseEntity {
 
 	private static final long serialVersionUID = 1L;
 
+	@TableField("user_id")
+	private String userId;
+
+	@TableField("roles")
+	private String roles;
+
 	@ApiModelProperty(value = "手机号")
 	@TableField("phone")
 	private String phone;
-
-	@ApiModelProperty(value = "用户密码")
-	@TableField("password")
-	private String password;
 
 	@ApiModelProperty(value = "用户姓名")
 	@TableField("name")
