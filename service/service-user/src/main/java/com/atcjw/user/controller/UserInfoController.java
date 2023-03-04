@@ -1,7 +1,6 @@
 package com.atcjw.user.controller;
 
 import com.atcjw.model.user.UserInfo;
-import com.atcjw.result.RetJson;
 import com.atcjw.user.service.UserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

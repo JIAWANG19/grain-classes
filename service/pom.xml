@@ -16,6 +16,7 @@
         <module>service-order</module>
         <module>service-activity</module>
         <module>service-user</module>
+        <module>service-token</module>
     </modules>
 
     <properties>
@@ -50,10 +51,10 @@
         </dependency>
 
         <!--mybatis-plus-->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.baomidou</groupId>-->
+<!--            <artifactId>mybatis-plus-boot-starter</artifactId>-->
+<!--        </dependency>-->
 
         <!--mysql-->
         <dependency>

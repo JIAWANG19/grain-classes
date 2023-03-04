@@ -11,7 +11,7 @@ spring:
       discovery:
         server-addr: 192.168.59.1:8848
         namespace: 5b1a127f-9baa-4a5f-a709-e0b67cb7ef3d
-        group: getaway
+        group: dev
     gateway:
       discovery:
         locator:

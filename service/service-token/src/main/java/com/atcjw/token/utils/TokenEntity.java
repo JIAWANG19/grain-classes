@@ -1,9 +1,8 @@
-package com.atcjw.token;
+package com.atcjw.token.utils;
 
 import com.atcjw.exception.TokenException;
 import lombok.Data;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Data

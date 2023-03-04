@@ -3,8 +3,7 @@ package com.atcjw.user.controller;
 import com.atcjw.model.user.User;
 import com.atcjw.model.user.UserInfo;
 import com.atcjw.result.RetJson;
-import com.atcjw.token.TokenEntity;
-import com.atcjw.token.TokenUtils;
+import com.atcjw.token.TokenClient;
 import com.atcjw.user.service.UserInfoService;
 import com.atcjw.user.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -22,6 +21,9 @@ public class UserPowerController {
     @Autowired
     UserInfoService userInfoService;
 
+    @Autowired
+    TokenClient tokenClient;
+
     @PostMapping("/login")
     public RetJson login(@RequestParam("email") String email,
                          @RequestParam("password") String password) {
@@ -32,17 +34,14 @@ public class UserPowerController {
         if (user == null) {
             return RetJson.fail("邮箱或密码错误");
         }
-        String token = TokenUtils.newToken(user.getId());
-        // todo 将 token 存入 redis 中
+        String token = tokenClient.issuedToken(user.getId());
         return RetJson.ok().put("token", token);
     }
 
     @GetMapping("/info")
-    public RetJson info(@RequestParam("token") String token) {
+    public RetJson info(@RequestParam("userId") Long userId) {
         try {
-            String decodeToken = TokenUtils.decodeToken(token);
-            TokenEntity tokenEntity = new TokenEntity(decodeToken);
-            User user = userService.getById(tokenEntity.getUserId());
+            User user = userService.getById(userId);
             if (user != null) {
                 UserInfo userInfo = userInfoService.getByUserId(user.getId());
                 return RetJson.ok().put("userInfo", userInfo);
@@ -50,7 +49,6 @@ public class UserPowerController {
                 return RetJson.fail("用户不存在");
             }
         } catch (Exception e) {
-            log.info("token解析失败, token: {}", token);
             e.printStackTrace();
             return RetJson.fail("用户不存在");
         }

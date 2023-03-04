@@ -1,4 +1,4 @@
-package com.atcjw.token;
+package com.atcjw.token.utils;
 
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.binary.StringUtils;
