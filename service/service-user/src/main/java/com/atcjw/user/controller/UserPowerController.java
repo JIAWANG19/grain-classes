@@ -39,8 +39,12 @@ public class UserPowerController {
     }
 
     @GetMapping("/info")
-    public RetJson info(@RequestParam("userId") Long userId) {
+    public RetJson info(@RequestParam("token") String token) {
         try {
+            Long userId = tokenClient.getUserId(token);
+            if (userId == null) {
+                return RetJson.fail("身份验证失败");
+            }
             User user = userService.getById(userId);
             if (user != null) {
                 UserInfo userInfo = userInfoService.getByUserId(user.getId());

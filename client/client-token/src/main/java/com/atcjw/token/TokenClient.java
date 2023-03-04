@@ -10,6 +10,9 @@ public interface TokenClient {
     @GetMapping("/admin/power/token/issue")
     String issuedToken(@RequestParam("userId") Long userId);
 
+    @GetMapping("/admin/power/token/userId")
+    Long getUserId(@RequestParam("token") String token);
+
     @GetMapping("/admin/power/token/check")
     boolean checkToken(@RequestParam("token") String token);
 }

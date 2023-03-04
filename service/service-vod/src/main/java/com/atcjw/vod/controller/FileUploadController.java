@@ -14,7 +14,7 @@ public class FileUploadController {
 
 
     @PostMapping("")
-    public RetJson uploadFile(@RequestParam("file") MultipartFile file) {
+    public RetJson uploadFile(MultipartFile file) {
         String url = fileService.upload(file);
         return RetJson.ok().put("url", url);
     }

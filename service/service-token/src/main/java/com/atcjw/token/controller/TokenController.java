@@ -23,7 +23,7 @@ public class TokenController {
     public String issuedToken(@RequestParam("userId") Long userId) {
         String token = TokenUtils.newToken(userId);
         try {
-            stringRedisTemplate.opsForSet().add(TOKEN_KEY, token);
+            stringRedisTemplate.opsForHash().put(TOKEN_KEY, token, String.valueOf(userId));
             return token;
         } catch (Exception e) {
             e.printStackTrace();
@@ -32,15 +32,21 @@ public class TokenController {
         }
     }
 
+    @GetMapping("/userId")
+    public Long getUserId(@RequestParam("token") String token) {
+        String userIdStr = (String) stringRedisTemplate.opsForHash().get(TOKEN_KEY, token);
+        if (userIdStr != null) {
+            Long userId = Long.parseLong(userIdStr);
+            log.info("token验证成功, userId: {}", userId);
+            return userId;
+        } else {
+            log.info("token验证失败");
+            return null;
+        }
+    }
+
     @GetMapping("/check")
     public boolean checkToken(@RequestParam("token") String token) {
-        boolean isSuccess = Boolean.TRUE.equals(stringRedisTemplate.opsForSet().isMember(TOKEN_KEY, token));
-        if (isSuccess) {
-            log.info("token验证成功, token: {}", token);
-            return true;
-        } else {
-            log.info("token验证失败, token: {}", token);
-            return false;
-        }
+        return stringRedisTemplate.opsForHash().hasKey(TOKEN_KEY, token);
     }
 }

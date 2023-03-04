@@ -33,7 +33,8 @@ public class VodConfig implements WebMvcConfigurer {
         InterceptorRegistration registration = registry.addInterceptor(getServiceVodInterceptor());
         registration.addPathPatterns("/**");
         registration.excludePathPatterns("/login")
-                .excludePathPatterns("logon");
+                .excludePathPatterns("logon")
+                .excludePathPatterns("/admin/vod/file**");
     }
 
 //    @Bean

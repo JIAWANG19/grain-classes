@@ -27,16 +27,7 @@ public class ServiceVodInterceptor implements HandlerInterceptor {
         String path = request.getRequestURI();
         String method = request.getMethod();
         if (!method.equalsIgnoreCase("get")) {
-            Cookie[] cookies = request.getCookies();
-            if (cookies == null) {
-                return false;
-            }
-            String token = null;
-            for (Cookie cookie : cookies) {
-                if ("token".equals(cookie.getName())) {
-                    token = cookie.getValue();
-                }
-            }
+            String token = request.getHeader("token");
             if (!StringUtils.hasLength(token) || !tokenClient.checkToken(token)) {
                 log.info("{}({}) 该请求被拦截, 没有携带token或token不正确", path, method);
                 return false;
