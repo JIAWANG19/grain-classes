@@ -109,3 +109,7 @@ Spring Cloud：2022.0.1
 
 ## SpringBoot3与SpringCloud2022
 
+项目来自于：
+
+[【尚硅谷&腾讯云】Java项目硅谷课堂丨微服务丨在线学习平台_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV13T411372x/?spm_id_from=333.337.search-card.all.click)
+
