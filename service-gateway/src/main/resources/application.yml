@@ -20,28 +20,24 @@ spring:
       routes:
         # service-vod 模块
         - id: service-vod
-#          uri: http://localhost:8301
           uri: lb://service-vod
           predicates:
           - Path=/admin/vod/**
 
         # service-order 模块
         - id: service-order
-#          uri: http://localhost:8302
           uri: lb://service-order
           predicates:
           - Path=/admin/order/**
 
         # service-activity 模块
         - id: service-activity
-#          uri: http://localhost:8303
           uri: lb://service-activity
           predicates:
           - Path=/admin/activity/**
 
         # service-user 模块
         - id: service-user
-#          uri: http://localhost:8304
           uri: lb://service-user
           predicates:
           - Path=/admin/user/**
