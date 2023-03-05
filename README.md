@@ -67,11 +67,11 @@ Spring Cloud：2022.0.1
 
 #### 课程列表页
 
-![image-20230305122723105](https://grain-classes.oss-cn-beijing.aliyuncs.com/service/crouse/course-list.png)
+![image-20230305122723105](https://grain-classes.oss-cn-beijing.aliyuncs.com/service/course/course-list.png)
 
 #### 课程基本信息管理页
 
-![image-20230305122757454](https://grain-classes.oss-cn-beijing.aliyuncs.com/service/crouse/course-info.png)
+![image-20230305122757454](https://grain-classes.oss-cn-beijing.aliyuncs.com/service/course/course-info.png)
 
 #### 课程大纲管理页
 
