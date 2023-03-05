@@ -142,8 +142,8 @@ spring:
 ```yml
 config:
   import:
-  	# group: 组名
-  	# refreshEnabled: 是否支持自动刷新
+    # group: 组名
+    # refreshEnabled: 是否支持自动刷新
     - optional:nacos:vod-database.yml?group=service-vod&refreshEnabled=true
     # 这是阿里云OOS对象存储服务的配置
     - optional:nacos:vod-aliyunOOS.properties?group=service-vod&refreshEnabled=true
