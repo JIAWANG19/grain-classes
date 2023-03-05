@@ -41,63 +41,63 @@ Spring Cloud：2022.0.1
 
 ### 登录页
 
-![image-20230305121823624](C:\Users\曹加望\AppData\Roaming\Typora\typora-user-images\image-20230305121823624.png)
+![image-20230305121823624](https://grain-classes.oss-cn-beijing.aliyuncs.com/service/index/login.png)
 
 ### 首页
 
-![image-20230305121943558](C:\Users\曹加望\AppData\Roaming\Typora\typora-user-images\image-20230305121943558.png)
+![image-20230305121943558](https://grain-classes.oss-cn-beijing.aliyuncs.com/service/index/index.png)
 
 ### 讲师管理功能
 
 #### 讲师列表页
 
-![image-20230305122017962](C:\Users\曹加望\AppData\Roaming\Typora\typora-user-images\image-20230305122017962.png)
+![image-20230305122017962](https://grain-classes.oss-cn-beijing.aliyuncs.com/service/teacher/teacher-list.png)
 
 #### 讲师编辑(修改)页
 
-![image-20230305122052863](C:\Users\曹加望\AppData\Roaming\Typora\typora-user-images\image-20230305122052863.png)
+![image-20230305122052863](https://grain-classes.oss-cn-beijing.aliyuncs.com/service/teacher/teacher-info.png)
 
 ### 课程分类管理功能
 
 #### 课程分类列表
 
-![image-20230305122151450](C:\Users\曹加望\AppData\Roaming\Typora\typora-user-images\image-20230305122151450.png)
+![image-20230305122151450](https://grain-classes.oss-cn-beijing.aliyuncs.com/service/course/course-sort.png)
 
 ### 课程管理功能
 
 #### 课程列表页
 
-![image-20230305122723105](C:\Users\曹加望\AppData\Roaming\Typora\typora-user-images\image-20230305122723105.png)
+![image-20230305122723105](https://grain-classes.oss-cn-beijing.aliyuncs.com/service/crouse/course-list.png)
 
 #### 课程基本信息管理页
 
-![image-20230305122757454](C:\Users\曹加望\AppData\Roaming\Typora\typora-user-images\image-20230305122757454.png)
+![image-20230305122757454](https://grain-classes.oss-cn-beijing.aliyuncs.com/service/crouse/course-info.png)
 
 #### 课程大纲管理页
 
-![image-20230305122833619](C:\Users\曹加望\AppData\Roaming\Typora\typora-user-images\image-20230305122833619.png)
+![image-20230305122833619](https://grain-classes.oss-cn-beijing.aliyuncs.com/service/course/course-detail.png)
 
 #### 课程最终发布页
 
-![image-20230305122849349](C:\Users\曹加望\AppData\Roaming\Typora\typora-user-images\image-20230305122849349.png)
+![image-20230305122849349](https://grain-classes.oss-cn-beijing.aliyuncs.com/service/course/course-publish.png)
 
 ### 订单列表页
 
-![image-20230305122924966](C:\Users\曹加望\AppData\Roaming\Typora\typora-user-images\image-20230305122924966.png)
+![image-20230305122924966](https://grain-classes.oss-cn-beijing.aliyuncs.com/service/order/order-list.png)
 
 ### 活动管理页
 
 #### 优惠卷列表页
 
-![image-20230305122954147](C:\Users\曹加望\AppData\Roaming\Typora\typora-user-images\image-20230305122954147.png)
+![image-20230305122954147](https://grain-classes.oss-cn-beijing.aliyuncs.com/service/activity/activity-list.png)
 
 #### 优惠卷修改页
 
-![image-20230305123022237](C:\Users\曹加望\AppData\Roaming\Typora\typora-user-images\image-20230305123022237.png)
+![image-20230305123022237](https://grain-classes.oss-cn-beijing.aliyuncs.com/service/activity/activity-info.png)
 
 #### 优惠卷详情页
 
-![image-20230305123045323](C:\Users\曹加望\AppData\Roaming\Typora\typora-user-images\image-20230305123045323.png)
+![image-20230305123045323](https://grain-classes.oss-cn-beijing.aliyuncs.com/service/activity/activity-detail.png)
 
 
 
