@@ -17,7 +17,7 @@ Spring Cloud：2022.0.1
 
 ### 整体架构
 
-![image-20230305105242437](images/image-20230305105242437.png)
+![image-20230305105242437](https://grain-classes.oss-cn-beijing.aliyuncs.com/service/index/build.png)
 
 ### 项目目录
 
